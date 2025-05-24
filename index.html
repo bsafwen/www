@@ -1,9 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprehensive HTML Example</title>
+    <script>
+        (function (m, a, z, e) {
+            var s, t;
+            try {
+                t = m.sessionStorage.getItem('maze-us');
+            } catch (err) { }
+
+            if (!t) {
+                t = new Date().getTime();
+                try {
+                    m.sessionStorage.setItem('maze-us', t);
+                } catch (err) { }
+            }
+
+            s = a.createElement('script');
+            s.src = z + '?apiKey=' + e;
+            s.async = true;
+            a.getElementsByTagName('head')[0].appendChild(s);
+            m.mazeUniversalSnippetApiKey = e;
+        })(window, document, 'https://snippet.maze.co/maze-universal-loader.js', '3279c025-2dc5-4d97-9edf-b87c624f6ecd');
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,17 +34,21 @@
             margin: 0 auto;
             padding: 20px;
         }
+
         section {
             margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 1px solid #ccc;
         }
+
         h2 {
             color: #2c3e50;
         }
+
         .input-group {
             margin-bottom: 15px;
         }
+
         label {
             display: block;
             margin-bottom: 5px;
@@ -30,6 +56,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Welcome to My Comprehensive HTML Page</h1>
@@ -45,8 +72,9 @@
 
     <section id="text-section">
         <h2>Text Elements</h2>
-        <p>This is a regular paragraph with some <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>.</p>
-        
+        <p>This is a regular paragraph with some <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a
+                link</a>.</p>
+
         <h3>Headings</h3>
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
@@ -54,20 +82,20 @@
         <h4>Heading 4</h4>
         <h5>Heading 5</h5>
         <h6>Heading 6</h6>
-        
+
         <h3>Lists</h3>
         <ul>
             <li>Unordered list item 1</li>
             <li>Unordered list item 2</li>
             <li>Unordered list item 3</li>
         </ul>
-        
+
         <ol>
             <li>Ordered list item 1</li>
             <li>Ordered list item 2</li>
             <li>Ordered list item 3</li>
         </ol>
-        
+
         <blockquote>
             This is a blockquote. It's used to highlight important text or quotes.
         </blockquote>
@@ -75,16 +103,16 @@
 
     <section id="media-section">
         <h2>Media Elements</h2>
-        
+
         <h3>Image</h3>
         <img src="https://via.placeholder.com/400x200" alt="Placeholder image" width="400" height="200">
-        
+
         <h3>Audio</h3>
         <audio controls>
             <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-        
+
         <h3>Video</h3>
         <video width="400" controls>
             <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
@@ -99,48 +127,48 @@
                 <label for="text-input">Text Input:</label>
                 <input type="text" id="text-input" name="text-input" placeholder="Enter text">
             </div>
-            
+
             <div class="input-group">
                 <label for="email-input">Email Input:</label>
                 <input type="email" id="email-input" name="email-input" placeholder="Enter email">
             </div>
-            
+
             <div class="input-group">
                 <label for="password-input">Password Input:</label>
                 <input type="password" id="password-input" name="password-input" placeholder="Enter password">
             </div>
-            
+
             <div class="input-group">
                 <label for="number-input">Number Input:</label>
                 <input type="number" id="number-input" name="number-input" min="1" max="100" step="1">
             </div>
-            
+
             <div class="input-group">
                 <label for="date-input">Date Input:</label>
                 <input type="date" id="date-input" name="date-input">
             </div>
-            
+
             <div class="input-group">
                 <label for="color-input">Color Input:</label>
                 <input type="color" id="color-input" name="color-input" value="#ff0000">
             </div>
-            
+
             <div class="input-group">
                 <label for="range-input">Range Input:</label>
                 <input type="range" id="range-input" name="range-input" min="0" max="100" value="50">
             </div>
-            
+
             <div class="input-group">
                 <label for="file-input">File Input:</label>
                 <input type="file" id="file-input" name="file-input">
             </div>
-            
+
             <div class="input-group">
                 <label for="checkbox-input">Checkbox:</label>
                 <input type="checkbox" id="checkbox-input" name="checkbox-input">
                 <label for="checkbox-input">Check me</label>
             </div>
-            
+
             <div class="input-group">
                 <label>Radio Buttons:</label>
                 <input type="radio" id="radio1" name="radio-group" value="1">
@@ -148,7 +176,7 @@
                 <input type="radio" id="radio2" name="radio-group" value="2">
                 <label for="radio2">Option 2</label>
             </div>
-            
+
             <div class="input-group">
                 <label for="select-input">Select Dropdown:</label>
                 <select id="select-input" name="select-input">
@@ -158,12 +186,13 @@
                     <option value="3">Option 3</option>
                 </select>
             </div>
-            
+
             <div class="input-group">
                 <label for="textarea-input">Textarea:</label>
-                <textarea id="textarea-input" name="textarea-input" rows="4" cols="50" placeholder="Enter multiline text"></textarea>
+                <textarea id="textarea-input" name="textarea-input" rows="4" cols="50"
+                    placeholder="Enter multiline text"></textarea>
             </div>
-            
+
             <div class="input-group">
                 <button type="submit">Submit Button</button>
                 <button type="reset">Reset Button</button>
@@ -206,4 +235,5 @@
         <p>Contact: <a href="mailto:info@example.com">info@example.com</a></p>
     </footer>
 </body>
+
 </html>
